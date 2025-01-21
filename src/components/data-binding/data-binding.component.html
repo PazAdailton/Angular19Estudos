@@ -1,0 +1,59 @@
+    <!--data-binding unidirecional-->
+    <button class="btn btn-success" (click)="navagator()"> Go To Navagator</button>
+<div class="row">
+    <div class="col-6">
+        1.interpolation
+
+        <p> FirstName =  {{firstName}}</p>
+
+        <div>
+          Tipo =  {{tipo}}
+        </div>
+        <span>{{isActive}}</span>
+
+    </div>
+        <div class="col-6">
+            <input type="text" [value]="firstName" name="" id="">
+            <br>
+            <input type="text" [placeholder]="placeHolder" name="" id="">
+            <br>
+            <div [class]="divClassName" style="height: 100px; width: 100px;">
+
+            </div>
+        
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button class="btn btn-success" (click)="showMessage()"> Show Welcome Text</button>
+            </div>
+            <div class="col-3">
+                <select name="Cidade" id="" (change)="cityChange()">
+                    <option value="SP">SP</option>
+                    <option value="RJ">RJ</option>
+                    <option value="BA">BA</option>
+                    <option value="GO">GO</option>
+                    <option value="AM">AM</option>
+                </select>
+            </div>
+        </div>
+
+            <!--data-binding bidirecional-->
+        <div class="row">
+            <div class="col-3">
+                <input type="text" [(ngModel)]="firstName">
+
+            </div>
+            <div class="col-3">
+            <select [(ngModel)]="selectCity">
+                <option value="SP">SP</option>
+                <option value="RJ">RJ</option>
+                <option value="BA">BA</option>
+                <option value="GO">GO</option>
+                <option value="AM">AM</option>
+            </select>
+            {{selectCity}}
+            </div>
+
+        </div>
+
+</div>
