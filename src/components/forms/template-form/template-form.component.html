@@ -1,0 +1,58 @@
+<div class="container">
+    <form #form="ngForm" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4 position-relative">
+          <label  class="form-label">First name <span class="text-danger">*</span></label>
+          <input type="text" #fName="ngModel" required [(ngModel)]="userObj.firstName" name="firstName" class="form-control" >
+          <div class="text-danger">
+            @if(fName.errors?.['required'] && fName.touched && fName.dirty){
+              <span >This is Required</span>
+            }
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label class="form-label">Last name</label>
+          <input type="text" required minlength="4" #lName="ngModel" [(ngModel)]="userObj.lastName" name="lastName" class="form-control" >
+          <div class="text-danger">
+              <span *ngIf="lName.errors?.['required'] && lName.touched && lName.dirty">this is required</span>
+              <span *ngIf="lName.errors?.['minlength'] && lName.touched && lName.dirty">Min char 4 required</span>
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label  class="form-label">Username</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">&#64;</span>
+            <input type="text" class="form-control" [(ngModel)]="userObj.userName" name="userName" aria-describedby="validationTooltipUsernamePrepend" >
+            
+          </div>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label class="form-label">City</label>
+          <input type="text" [(ngModel)]="userObj.city"  name="city" class="form-control" >
+          
+        </div>
+        <div class="col-md-3 position-relative">
+          <label class="form-label">State</label>
+          <select class="form-select" [(ngModel)]="userObj.state" name="state">
+            <option selected disabled value="">Choose...</option>
+            <option value="São Paulo">São Paulo</option>
+            <option value="Bahia">Bahia</option>
+            <option value="Rio de janeiro">Rio de Janeiro</option>
+            <option value="Santa Catarina">Santa Catarina</option>
+          </select>
+          
+        </div>
+        <div class="col-md-3 position-relative">
+          <label class="form-label">Zip</label>
+          <input type="text" [(ngModel)]="userObj.zipCode" name="zipCode" class="form-control" >
+          
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input type="checkbox" [(ngModel)]="userObj.isTermsAgree" name="isTermsAgree" class="form-check-input">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button class="btn btn-primary" [disabled]="form.invalid" type="button" (click)="onSave()">Submit form</button>
+        </div>
+      </form>
+
+</div>

@@ -5,7 +5,8 @@ import { NgClassComponent } from '../components/ng-class/ng-class.component';
 import { ControlStatementComponent } from '../components/control-statement/control-statement.component';
 import { SignalComponent } from '../components/signal/signal.component';
 import { LinkedSignalComponent } from '../components/linked-signal/linked-signal.component';
-import { TemplateFormComponent } from '../components/template-form/template-form.component';
+import { TemplateFormComponent } from '../components/forms/template-form/template-form.component';
+import { ReactiveFormComponent } from '../components/forms/reactive-form/reactive-form.component';
 
 
 export const routes: Routes = [
@@ -41,6 +42,10 @@ export const routes: Routes = [
     {
         path: 'template-form',
         component: TemplateFormComponent
+    },
+    {
+        path: 'reactive-form',
+        component: ReactiveFormComponent
     }
 
 ];
