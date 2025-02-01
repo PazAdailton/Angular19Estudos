@@ -7,28 +7,46 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/admin">Admin</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" routerLink="/dataBinding">Data Binding</a>
+
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/ng-class">NgClass</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" arial-expanded="false" >
+            Directive
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/ng-class">NgClass</a></li>
+            <li><a class="dropdown-item" routerLink="/control-flow">Control Flow</a></li>
+        </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/control-flow">Control Flow</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" arial-expanded="false">
+            Signal
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/signal">Signal</a></li>
+            <li><a class="dropdown-item" routerLink="/linked-signal">Linked-Signal</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-         <a class="nav-link" routerLink="/signal">Signal</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Forms
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/template-form">Template-Form</a></li>
+            <li><a class="dropdown-item" routerLink="/reactive-form">Reactive-Form</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/linked-signal">Linked-Signal</a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link" routerLink="/template-form">Forms</a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link" routerLink="/reactive-form">Forms-Reactive</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            API Call
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="get-api">GET-api</a></li>
+            <li><a class="dropdown-item" routerLink="post-api">POST-api</a></li>
+            <li><a class="dropdown-item" routerLink="put-api">PUT-api</a></li>
+            <li><a class="dropdown-item" routerLink="delete-api">DELETE-api</a></li>
+          </ul>
         </li>
       </ul>
       <form class="d-flex" role="search">

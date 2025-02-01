@@ -24,10 +24,11 @@ export class ReactiveFormComponent {
     setTimeout(() => {
       this.userForm.controls['state'].enable();
     }, 5000);
-    const isValid = this.userForm.valid;
+    
   }
 
   onUserSave(){
+    const isValid = this.userForm.valid;
     const formValue = this.userForm.value;
     debugger;
   }

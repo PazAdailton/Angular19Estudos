@@ -1,0 +1,46 @@
+
+<div class="row">
+   <div class="col-3">
+        <button class="btn btn-success" (click)="getUsers()">Load Users</button>
+   </div>
+   <div class="col-3">
+    <button class="btn btn-success" (click)="getProducts()">Load Products</button>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>UserName</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>WebSite</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(item of userList; track $index){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phone}}</td>
+                    <td>{{item.website}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-5">
+            <select name="Products" id="">Products
+                @for(item of productList; track $index){
+                <option [value]="item.product_id">{{item.name}}</option>
+                
+            }
+            </select>
+    </div>
+</div>
