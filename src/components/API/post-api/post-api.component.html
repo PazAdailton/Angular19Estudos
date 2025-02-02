@@ -1,0 +1,72 @@
+<p>post-api works!</p>
+
+
+<div class="row pt-2 justify-content-center">
+    <div class="col-12 text-center" style="height: 75px;" >
+        <h2>POST API Integration using Template Form</h2>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success" (click)="getAllEstudantes()">Load Estudantes</button>
+    </div>
+</div>
+    <div class="row pt-2">
+    <div class="col-7">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5>Estudante List</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Categoria Estudantil</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for(item of estudanteList; track $index){
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td>{{item.nome}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.categoriaEstudantil}}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5>Create New Estudante</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6 mt-2">
+                        <label for="">Nome</label>
+                        <input type="text" [(ngModel)]="estudanteObj.nome" class="form-control" placeholder="Enter car number">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label for="">Email</label>
+                        <input type="text" [(ngModel)]="estudanteObj.email" class="form-control" placeholder="Enter brand name">
+                    </div>
+                    <div class="col-6 mt-2">
+                        <label for="">Categoria Estudantil</label>
+                        <input type="text" [(ngModel)]="estudanteObj.categoriaEstudantil" class="form-control" placeholder="Enter model name">
+                    </div>
+                    <div class="row">
+                       <div class="col-12 mt-2 text-center">
+                        <button class="btn btn-secondary m-2" (click)="resetForm()">Reset Form</button>
+                        <button class="btn btn-success m-2" (click)="onSaveEstudantes()">Save Car</button>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
