@@ -5,11 +5,9 @@
     <div class="col-12 text-center" style="height: 75px;" >
         <h2>POST API Integration using Template Form</h2>
     </div>
-    <div class="col-4">
-        <button class="btn btn-success" (click)="getAllEstudantes()">Load Estudantes</button>
-    </div>
+
 </div>
-    <div class="row pt-2">
+    <div class="row pt-2 mt-2 justify-content-center">
     <div class="col-7">
         <div class="card">
             <div class="card-header bg-warning">
@@ -23,15 +21,20 @@
                             <th>Nome</th>
                             <th>Email</th>
                             <th>Categoria Estudantil</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         @for(item of estudanteList; track $index){
                         <tr>
-                            <td>{{$index+1}}</td>
+                            <td>{{item.id}}</td>
                             <td>{{item.nome}}</td>
                             <td>{{item.email}}</td>
                             <td>{{item.categoriaEstudantil}}</td>
+                            <td class="button">
+                                <button class="btn btn-success" (click)="onEdit(item)">Edit</button>
+                                <button class="btn btn-danger but" (click)="excluir(item.id)">Delete</button>
+                            </td>
                         </tr>
                         }
                     </tbody>
@@ -62,7 +65,15 @@
                     <div class="row">
                        <div class="col-12 mt-2 text-center">
                         <button class="btn btn-secondary m-2" (click)="resetForm()">Reset Form</button>
-                        <button class="btn btn-success m-2" (click)="onSaveEstudantes()">Save Car</button>
+                            {{estudanteObj.id}}
+                            @if(estudanteObj.id == ""){
+                                <button class="btn btn-success m-2" (click)="onSaveEstudantes()">Save Estudantes</button>
+                            }@else{
+                                <button class="btn btn-warning m-2" (click)="updateEstudante()">Update Estudante</button>
+                            }
+                   
+                        
+                        
                        </div>
                     </div>
                 </div>
