@@ -10,6 +10,7 @@ import { ReactiveFormComponent } from '../components/forms/reactive-form/reactiv
 import { GetApiComponent } from '../components/API/get-api/get-api.component';
 import { PostApiComponent } from '../components/API/post-api/post-api.component';
 import { ResourceApiComponent } from '../components/resource-api/resource-api.component';
+import { CustomerComponent } from '../components/API/customer/customer.component';
 
 
 export const routes: Routes = [
@@ -61,6 +62,10 @@ export const routes: Routes = [
     {
         path: 'resource-api',
         component: ResourceApiComponent
+    },
+    {
+        path: 'customer',
+        component: CustomerComponent
     }
 
 ];
