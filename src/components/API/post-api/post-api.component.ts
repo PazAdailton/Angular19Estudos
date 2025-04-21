@@ -78,6 +78,8 @@ updateEstudante() {
     }
 
     excluir(id:number){
+      const isDelete = confirm('Você tem certeza que quer excluir?')
+      if(isDelete == true){
       this.http.delete(`http://localhost:8181/api/estudantes/excluir/${id}`, {observe: 'response'})
       .subscribe({
           next: (res:any) => {
@@ -97,7 +99,9 @@ updateEstudante() {
             }
             console.error("Erro ao excluir estudante:", err);
           }
+          
       });
+      }
     }
     resetForm(){
       this.estudanteObj = {
